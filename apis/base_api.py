@@ -7,17 +7,25 @@ from rest_framework import response, viewsets, status
 
 from apis.authentication import APIKeyAuthentication
 from apis.exceptions import APIAccessDenied, APIException, APINotFound
+from apis.pagination import BasePagination
 
 log = logging.getLogger(__name__)
 
 
 class BaseAPI(viewsets.GenericViewSet):
     authentication_classes = [APIKeyAuthentication]
+    pagination_class = BasePagination
     lookup_field = "id"
 
     def __init__(self, **kwargs):
         self.start_time = time.time()
         super().__init__(**kwargs)
+
+    def paginated_response(self, queryset, request):
+        paginator = self.pagination_class()
+        page = paginator.paginate_queryset(queryset, request, view=self)
+        serializer = self.get_serializer(page, many=True)
+        return paginator.get_paginated_response(serializer.data)
 
     def get_runtime(self) -> float:
         return time.time() - self.start_time
