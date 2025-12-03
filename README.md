@@ -1,6 +1,6 @@
 # Django Starter Project
 
-A batteries-included Django starter project for building webapps and REST APIs quickly.
+A batteries-included Django starter project for building web-apps and REST APIs quickly.
 
 ## What's Included
 
