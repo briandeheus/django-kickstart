@@ -14,7 +14,9 @@ This starter project is a little bit opinionated, but highly extensible.
 - **Django Extensions** - Includes `shell_plus` and other useful management commands
 - **WhiteNoise** - Simplified static file serving
 - **Custom User Model** - `CoreUser` model ready for extension
-
+- **DotEnv Support** - Supply a `.env` files to set your environment variables
+- **Postgres by default** - Uses Postgresql with the latest version of `psycopg` by default
+- 
 ### APIs App
 Pre-configured `apis` app with:
 - API key authentication system
