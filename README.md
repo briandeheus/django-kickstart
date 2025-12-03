@@ -2,6 +2,10 @@
 
 A batteries-included Django starter project for building web-apps and REST APIs quickly.
 
+It's designed to help you get started with a solid foundation. 
+Once started, it's easy to extend, update, and add or remove parts as you'd normally do.
+This starter project is a little bit opinionated, but highly extensible.
+
 ## What's Included
 
 ### Core Features
