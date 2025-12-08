@@ -1,7 +1,8 @@
+from django.conf import settings
 from rest_framework import status
+
 from apis.apis.v1.tests.base import BaseV1APITestCase
 from apis.models import APIKey
-from django.conf import settings
 
 
 class TestApiKeys(BaseV1APITestCase):

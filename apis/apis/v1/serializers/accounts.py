@@ -1,6 +1,5 @@
 from rest_framework.serializers import ModelSerializer
 
-
 from apis.models import APIKey
 from core.models import CoreUser
 

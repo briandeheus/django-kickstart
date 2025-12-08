@@ -1,6 +1,6 @@
 from rest_framework.routers import DefaultRouter
 
-from apis.apis.v1.apis import api_keys, accounts
+from apis.apis.v1.apis import accounts, api_keys
 
 router = DefaultRouter()
 

@@ -1,9 +1,8 @@
 from django.conf import settings
-from rest_framework.test import APITestCase, APIClient
 from django.contrib.auth import get_user_model
+from rest_framework.test import APIClient, APITestCase
 
 from apis.methods import create_api_key
-
 
 User = get_user_model()
 

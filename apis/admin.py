@@ -1,7 +1,8 @@
-from django.contrib import admin
 from django.conf import settings
-from .models import APIKey
+from django.contrib import admin
+
 from .methods import generate_secure_string
+from .models import APIKey
 
 
 @admin.register(APIKey)

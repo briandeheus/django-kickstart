@@ -1,9 +1,9 @@
-from typing import Union, List, Tuple
+from typing import List, Tuple, Union
 
 from rest_framework.authentication import BaseAuthentication
 
-from apis.models import APIKey
 from apis.methods import get_user_from_api_key
+from apis.models import APIKey
 from core.models import CoreUser
 
 
