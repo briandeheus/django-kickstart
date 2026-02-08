@@ -16,7 +16,11 @@ This starter project is a little bit opinionated, but highly extensible.
 - **Custom User Model** - `CoreUser` model ready for extension
 - **DotEnv Support** - Supply a `.env` files to set your environment variables
 - **Postgres by default** - Uses Postgresql with the latest version of `psycopg` by default
-- 
+
+### Asynchronous Tasks
+- **Celery** - Using Redis as a backend
+- **Scheduling** - Scheduled tasks using Celery Beat
+
 ### APIs App
 Pre-configured `apis` app with:
 - API key authentication system
@@ -57,11 +61,7 @@ Use the enhanced shell:
 python manage.py shell_plus
 ```
 
-## API Structure
-
-APIs are organized under `/api/v1/` with:
-- Token-based authentication
-- Serializers for request/response handling
-- Built-in test utilities
-
-Check `apis/apis/v1/router.py` for available endpoints.
+Run Celery and Celery Beat
+```bash
+./bin/celery.sh
+```
