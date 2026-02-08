@@ -57,13 +57,6 @@ Use the enhanced shell:
 python manage.py shell_plus
 ```
 
-## Configuration
-
-The project uses SQLite by default and includes:
-- API key authentication (`Bearer` token scheme)
-- Customizable API key prefix (default: `core`)
-- Environment-based logging configuration
-
 ## API Structure
 
 APIs are organized under `/api/v1/` with:

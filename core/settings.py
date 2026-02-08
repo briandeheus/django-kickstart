@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 
 import dotenv
+from celery.schedules import crontab
 
 dotenv.load_dotenv(override=True)
 
@@ -120,7 +121,8 @@ TIME_ZONE = "UTC"
 
 USE_I18N = True
 
-USE_TZ = True
+# Timezone support disabled since it causes more issues than it solves.
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -163,6 +165,10 @@ LOGGING = {
     },
 }
 
+#
+# API Settings
+#
+
 # Length of the API key to use
 API_KEY_LENGTH = 32
 # Prefix for the API key, e.g core will generate
@@ -170,3 +176,18 @@ API_KEY_LENGTH = 32
 API_KEY_PREFIX = "core"
 # The app will look for this in the Authorization header
 API_AUTH_SCHEME = "Bearer"
+
+#
+# Celery Settings
+#
+CELERY_REDIS_DATABASE = os.environ.get("CELERY_REDIS_DATABASE", "0")
+CELERY_BROKER_URL = f"redis://localhost:6379/{CELERY_REDIS_DATABASE}"
+CELERY_RESULT_BACKEND = f"redis://localhost:6379/{CELERY_REDIS_DATABASE}"
+
+# Celery Beat Schedule
+CELERY_BEAT_SCHEDULE = {
+    "sample_task_scheduled": {
+        "task": "core.tasks.sample_task",
+        "schedule": crontab(minute="*/1"),  # Every minute
+    },
+}
