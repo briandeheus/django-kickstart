@@ -31,11 +31,11 @@
         <div class="commands">
             <div class="command">
                 <span class="command-label">Install & migrate</span>
-                <code>uv sync && python manage.py migrate</code>
+                <code>uv sync && uv run manage.py migrate</code>
             </div>
             <div class="command">
                 <span class="command-label">Run dev server</span>
-                <code>python manage.py runserver</code>
+                <code>uv run manage.py runserver</code>
             </div>
             <div class="command">
                 <span class="command-label">Start Celery workers</span>
