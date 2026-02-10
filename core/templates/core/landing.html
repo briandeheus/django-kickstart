@@ -1,0 +1,46 @@
+{% extends "core/base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="logo">🐍</div>
+        <h1>Brian's Django Starter</h1>
+        <p class="tagline">A batteries-included starter for web apps & REST APIs</p>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Django 5.2 + DRF</h3>
+                <p>Latest framework with full REST API toolkit</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔄</div>
+                <h3>Celery + Redis</h3>
+                <p>Async tasks and scheduled jobs built-in</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔐</div>
+                <h3>Auth Ready</h3>
+                <p>Custom user model & API key system</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🐘</div>
+                <h3>Postgres</h3>
+                <p>Production-ready database from day one</p>
+            </div>
+        </div>
+
+        <div class="commands">
+            <div class="command">
+                <span class="command-label">Install & migrate</span>
+                <code>uv sync && python manage.py migrate</code>
+            </div>
+            <div class="command">
+                <span class="command-label">Run dev server</span>
+                <code>python manage.py runserver</code>
+            </div>
+            <div class="command">
+                <span class="command-label">Start Celery workers</span>
+                <code>./bin/celery.sh</code>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -18,7 +18,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from core.views import LandingView
+
 urlpatterns = [
+    path("", LandingView.as_view(), name="landing"),
     path("admin/", admin.site.urls),
     path("api/", include("apis.urls")),
 ]
